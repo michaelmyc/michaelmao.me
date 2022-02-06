@@ -1,0 +1,13 @@
+{{ define "main" }}
+  {{ partial "functions/load-scss.html" "scss/pages/tags.scss" }}
+  <h1>tag</h1>
+  <div class="tags-container">
+    {{ $tags := slice }}
+    {{ range .Pages }}
+      {{ $tags = $tags | append ( dict "Page" . "Count" ( len .Pages ) ) }}
+    {{ end }}
+    {{ range sort $tags "Count" "desc" }}
+      <b><a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }} ({{ .Count }})</a></b>
+    {{ end }}
+  </div>
+{{ end }}

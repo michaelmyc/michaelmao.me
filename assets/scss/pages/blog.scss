@@ -1,0 +1,134 @@
+@import "../variables.scss";
+@import "../components/code.scss";
+
+.taxonomy-info {
+  margin-bottom: 1.2em;
+}
+
+.tags {
+  display: flex;
+  gap: 1ex;
+  font-size: 1.1em;
+  margin-bottom: 0.2em;
+}
+
+.series {
+  color: $dark;
+}
+
+hr {
+  margin: 1.2em auto;
+  background-color: $main;
+  border-color: $main;
+  color: $main;
+  border-radius: 2px;
+  width: 70%;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 1.1em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+h3 {
+  font-size: 1.3em;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+h4 {
+  font-size: 1.2em;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+h5 {
+  color: $dark;
+  font-size: 1.1em;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+h6 {
+  color: $dark;
+  font-size: 1em;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+blockquote {
+  width: 80%;
+  color: $dark;
+  margin-left: 2em;
+  margin-bottom: 1.2em;
+
+  blockquote {
+    margin-bottom: 0.4em;
+    margin-left: 1em;
+  }
+
+  p {
+    margin-bottom: 0.4em;
+  }
+
+  cite {
+    display: block;
+    text-align: right;
+    font-style: italic;
+  }
+}
+
+table {
+  margin: 1.2em;
+  min-width: calc((100% - 2.4em) * 0.5);
+  border-collapse: collapse;
+  overflow: auto;
+
+  th,
+  td {
+    border: 1px solid $main;
+    padding: 1ex;
+  }
+}
+
+ul,
+ol {
+  margin-left: 1em;
+  margin-bottom: 1.2em;
+  list-style-position: inside;
+
+  li {
+    margin-bottom: 0.2em;
+  }
+}
+
+.checklist {
+  list-style-type: none;
+}
+
+.footnotes {
+  li {
+    margin-bottom: 1.2em;
+  }
+
+  p {
+    display: inline;
+  }
+}
+
+.footnote-ref,
+.footnote-backref {
+  user-select: none;
+}
+
+@media (orientation: portrait) {
+  table {
+    margin: 1.2em auto;
+  }
+}

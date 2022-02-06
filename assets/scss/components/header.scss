@@ -1,0 +1,134 @@
+@import "./variables.scss";
+
+header {
+  position: absolute;
+
+  div.widescreen {
+    z-index: 1;
+    height: 160px;
+    padding: 0 80px;
+    background-color: $background;
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      gap: 60px;
+
+      a {
+        color: $main;
+        position: relative;
+      }
+
+      a:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        border-bottom: 2px solid $main;
+        transition: 0.4s;
+      }
+
+      a:hover:after {
+        width: 100%;
+      }
+    }
+
+    .header-title {
+      color: $main;
+      font-size: 1.5em;
+    }
+  }
+
+  div.mobile {
+    .burger-icon-container {
+      width: 100vw;
+      height: 4em;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      top: 0;
+      z-index: 10;
+      background-color: $background;
+    }
+
+    #burger-icon {
+      cursor: pointer;
+      width: 2em;
+      margin-left: 1.5em;
+
+      div {
+        height: 0.2em;
+        background-color: $main;
+      }
+
+      .burger-icon-middle {
+        margin: 0.5em 0;
+      }
+    }
+
+    #burger-menu {
+      position: fixed;
+      width: 100vw;
+      display: flex;
+      height: 16em;
+      top: -12em;
+      background-color: $background;
+      z-index: 5;
+      align-items: center;
+      flex-direction: column;
+      transition: top 0.4s ease;
+
+      a {
+        font-size: 1.5em;
+        color: $main;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 4em;
+        width: 100vw;
+      }
+    }
+
+    #burger-menu.open-menu {
+      top: 4em;
+    }
+  }
+
+  #burger-mask {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: black;
+    transition: all 0.6s linear;
+  }
+
+  #burger-mask.apply-mask {
+    opacity: 0.4;
+    visibility: visible;
+  }
+}
+
+@media (orientation: landscape) {
+  header div.mobile {
+    display: none;
+  }
+}
+
+@media (orientation: portrait) {
+  header div.widescreen {
+    display: none;
+  }
+}

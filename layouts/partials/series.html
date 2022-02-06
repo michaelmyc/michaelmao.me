@@ -1,0 +1,7 @@
+<div class="list-item">
+  <div class="list-title-line">
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <h3 class="list-detail">{{ len .Pages }} {{ cond (gt (len .Pages) 1) "Articles" "Article" }}</h3>
+  </div>
+  <p>{{ .Params.Description }}</p>
+</div>

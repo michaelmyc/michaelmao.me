@@ -1,0 +1,113 @@
+<head>
+  {{ $coverUrl := cond ( isset .Params "coverImage" ) .Params.CoverImage .Site.Params.CoverImage }}
+  {{ $description := cond ( ne .Description "" ) .Description .Site.Params.SiteDescription }}
+
+  {{/*  Primary Meta Tags  */}}
+  <title>{{ .Site.Title }} - {{ .Title }}</title>
+  <meta name="title" content="{{ .Site.Title }} - {{ .Title }}">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta name="description" content="{{ $description }}">
+
+  {{/*  Open Graph / Facebook  */}}
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:title" content="{{ .Site.Title }} - {{ .Title }}">
+  <meta property="og:description" content="{{ $description }}">
+  {{ with $coverUrl }}
+    <meta property="og:image" content="{{ $coverUrl }}">
+  {{ end }}
+
+  {{/*  Twitter  */}}
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ .Permalink }}">
+  <meta property="twitter:title" content="{{ .Site.Title }} - {{ .Title }}">
+  <meta property="twitter:description" content="{{ $description }}">
+  {{ with $coverUrl }}
+    <meta property="twitter:image" content="{{ $coverUrl }}">
+  {{ end }}
+
+  {{/*  CSS Styling  */}}
+  {{ partial "functions/load-scss.html" "scss/main.scss" }}
+
+  {{/*  Font Awesome  */}}
+  {{ with .Site.Params.Fontawesome }}
+    <script defer src="https://kit.fontawesome.com/{{ site.Params.Fontawesome }}.js" crossorigin="anonymous"></script>
+  {{ end }}
+  
+  {{/*  KaTeX  */}}
+  {{ with .Params.Katex.Enable }}
+    {{/*  Core KaTeX Files  */}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+
+    {{/*  KaTeX CopyTeX: copies equations as LaTeX  */}}
+    <script defer src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    <link defer href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+
+    {{/*  KaTeX Delimiter Settings  */}}
+    {{ with $.Params.Katex.SingleDollarDeliminator }}
+      <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError : false
+              });
+          });
+      </script>
+    {{ else }}
+      <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              renderMathInElement(document.body);
+          });
+      </script>
+    {{ end }}
+  {{ end }}
+
+  {{/*  dynamically size widescreen header  */}}
+  <script>
+    const maxHeaderHeight = 160;
+    const minHeaderHeight = 80;
+
+    window.onscroll = function() {
+      if (document.body.scrollTop <= maxHeaderHeight ||
+          document.documentElement.scrollTop <= maxHeaderHeight)
+      {
+        scrollHeight = Math.min(Math.max(document.body.scrollTop, document.documentElement.scrollTop), maxHeaderHeight);
+        headerHeight = minHeaderHeight + (maxHeaderHeight - minHeaderHeight) * (maxHeaderHeight - scrollHeight) / maxHeaderHeight;
+        document.querySelectorAll("header>div.widescreen")[0]
+          .style.height = `${headerHeight}px`;
+      }
+    };
+  </script>
+
+  {{/*  offset hash link scroll height  */}}
+  <script>
+    window.onhashchange = function() {
+      var body = document.body;
+      var html = document.documentElement;
+      var documentHeight = Math.max(
+        body.scrollHeight,
+        body.offsetHeight,
+        html.clientHeight,
+        html.scrollHeight,
+        html.offsetHeight,
+      );
+      var maxScrollHeight = documentHeight - window.innerHeight;
+      var scrollHeight = Math.max(
+        body.scrollTop,
+        html.scrollTop,
+      );
+
+      if (window.location.hash && Math.abs(maxScrollHeight - scrollHeight) > 1) {
+        document.documentElement.scrollTop -= 80;
+        document.body.scrollTop -= 80;
+      }
+    };
+  </script>
+</head>

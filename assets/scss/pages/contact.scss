@@ -1,0 +1,30 @@
+@import "../variables.scss";
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .contact-hline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    overflow: visible;
+    height: 2px;
+    width: 80%;
+    background-color: $main;
+    border-radius: 2px;
+  }
+
+  .contact-icon {
+    font-size: 2em;
+    padding: 0.4em;
+    background-color: $background;
+
+    a {
+      color: $main;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+baseURL = 'https://michaelmao.me/'
+languageCode = 'en-us'
+title = 'Michael Mao'
+
+[params]
+  author = 'Michael (Yicong) Mao'
+  fontawesome = '13bff49e18'
+  siteDescription = 'I am Michael Mao, a software engineer and a machine learning enthusiast. This is my blog where I write about everything from technical content to random musings.'
+  coverImage = '/assets/cover.webp'
+
+  [[params.menu]]
+    name = 'Home'
+    url = '/'
+  [[params.menu]]
+    name = 'Blog'
+    url = '/blog'
+  [[params.menu]]
+    name = 'Series'
+    url = '/series'
+  [[params.menu]]
+    name = 'Contact'
+    url = '/contact'
+  
+  [[params.contact]]
+    name = 'Email'
+    icon = '<i class="fa-regular fa-envelope"></i>'
+    url = 'mailto:michael.mao99@gmail.com'
+  [[params.contact]]
+    name = 'Github'
+    icon = '<i class="fa-brands fa-github"></i>'
+    url = 'https://github.com/michaelmyc'
+  [[params.contact]]
+    name = 'LinkedIn'
+    icon = '<i class="fa-brands fa-linkedin-in"></i>'
+    url = 'https://www.linkedin.com/in/yicong-michael-mao/'
+  [[params.contact]]
+    name = 'Twitter'
+    icon = '<i class="fa-brands fa-twitter"></i>'
+    url = 'https://twitter.com/michaelmaoyc'
+
+
+[taxonomies]
+  tags = "tags"
+  series = "series"
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = 'nord'
+    tabWidth = 4
+  [markup.goldmark.renderer]
+    hardWraps = false
+    unsafe = true
+    xhtml = false

@@ -1,0 +1,5 @@
+{{ define "main" }}
+  {{ partial "functions/load-scss.html" "scss/pages/tags.scss" }}
+  <h1><a class="breadcrumb-link" href="/tags">tag</a>/{{ .Title }}</h1>
+  {{- partial "blog-list.html" . -}}
+{{ end }}

@@ -1,0 +1,21 @@
+@import "../variables.scss";
+
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.message-large {
+  color: $dark;
+  font-size: 4em;
+  margin: 0;
+}
+
+.message {
+  color: $dark;
+  margin: 0;
+}

@@ -1,0 +1,33 @@
+@import "../variables.scss";
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+
+  .list-title-line {
+    display: flex;
+    justify-content: space-between;
+
+    .list-detail {
+      color: $dark;
+    }
+  }
+
+  .list-description {
+    color: $main;
+  }
+}
+
+.year {
+  color: $dark;
+  text-align: right;
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+}

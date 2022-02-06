@@ -1,0 +1,115 @@
+@import "./variables.scss";
+@import "./font.scss";
+@import "./components/header.scss";
+@import "./components/footer.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background;
+  color: $main;
+  font-family: "Lato", "Roboto", sans-serif;
+  font-size: 100%;
+  text-size-adjust: none;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 6em;
+  overflow-x: hidden;
+}
+
+a {
+  color: $accent;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.dark {
+  color: $dark;
+}
+
+.unselectable {
+  user-select: none;
+}
+
+@media (orientation: landscape) {
+  #content {
+    margin: 160px 20vw 0 20vw;
+    max-width: 60vw;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  .title {
+    margin-bottom: 1em;
+
+    h1 {
+      margin: 0;
+    }
+
+    .subtitle {
+      color: $dark;
+      font-size: 1.5em;
+      margin-top: 0.2em;
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  body {
+    font-size: 2.5em;
+  }
+
+  #content {
+    margin: 4em 1.5em 0 1.5em;
+    max-width: calc(100vw - 3em);
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 2em;
+  }
+
+  .title {
+    margin-bottom: 1em;
+
+    h1 {
+      margin: 0;
+    }
+
+    .subtitle {
+      color: $dark;
+      font-size: 1.5em;
+      margin-top: 0.2em;
+    }
+  }
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: $main;
+  border-radius: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $dark;
+  border-radius: 1em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $accent;
+}

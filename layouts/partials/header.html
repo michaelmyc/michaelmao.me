@@ -1,0 +1,57 @@
+<header>
+  <div class="widescreen">
+    <a href="/" class="header-title">{{ .Site.Title }}</a>
+    <nav>
+      {{ range site.Params.Menu }}
+        <a href='{{ index . "url" }}'>{{ index . "name" }}</a>
+      {{ end }}
+    </nav>
+  </div>
+  <div class="mobile">
+    <div class="burger-icon-container">
+      <div id="burger-icon">
+        <div></div>
+        <div class="burger-icon-middle"></div>
+        <div></div>
+      </div>
+    </div>
+    <nav id="burger-menu">
+      {{ range site.Params.Menu }}
+        <a href='{{ index . "url" }}'>{{ index . "name" }}</a>
+      {{ end }}
+    </nav>
+  </div>
+  <div id="burger-mask"></div>
+  <script>
+    function preventScroll(e){
+      e.preventDefault();
+      e.stopPropagation();
+  
+      return false;
+    }
+
+    function toggleMenu() {
+      const openMenu = !document.getElementById("burger-menu").classList.contains("open-menu");
+      document.getElementById("burger-menu").classList.toggle("open-menu");
+      document.getElementById("burger-mask").classList.toggle("apply-mask");
+      if (openMenu) {
+        document.getElementById("burger-mask").addEventListener("wheel", preventScroll);
+        document.getElementById("burger-mask").addEventListener("touchmove", preventScroll);
+        document.getElementById("burger-menu").addEventListener("wheel", preventScroll);
+        document.getElementById("burger-menu").addEventListener("touchmove", preventScroll);
+        document.querySelectorAll("header>div.mobile")[0].addEventListener("wheel", preventScroll);
+        document.querySelectorAll("header>div.mobile")[0].addEventListener("touchmove", preventScroll);
+      } else {
+        document.getElementById("burger-mask").removeEventListener("wheel", preventScroll);
+        document.getElementById("burger-mask").removeEventListener("touchmove", preventScroll);
+        document.getElementById("burger-menu").removeEventListener("wheel", preventScroll);
+        document.getElementById("burger-menu").removeEventListener("touchmove", preventScroll);
+        document.querySelectorAll("header>div.mobile")[0].removeEventListener("wheel", preventScroll);
+        document.querySelectorAll("header>div.mobile")[0].removeEventListener("touchmove", preventScroll);
+      }
+    }
+
+    document.getElementById("burger-icon").addEventListener("click", toggleMenu);
+    document.getElementById("burger-mask").addEventListener("click", toggleMenu);
+  </script>
+</header>

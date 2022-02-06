@@ -1,0 +1,18 @@
+{{- $content := . -}}
+
+{{- /* Checklist ul */ -}}
+{{- $pattern := `<ul>(\s*)<li>(\s*)(<input( checked="" | )disabled="" type="checkbox">)` -}}
+{{- $replacement := `<ul class="checklist">$1<li>$3` -}}
+{{- $content = replaceRE $pattern $replacement $content -}}
+
+{{- /* Checkbox unchecked */ -}}
+{{- $old := `<li><input disabled="" type="checkbox"> ` -}}
+{{- $new := `<li class="unchecked"><i class="far fa-square fa-fw"></i><span class="unselectable"> </span>` -}}
+{{- $content = replace $content $old $new -}}
+
+{{- /* Checkbox checked */ -}}
+{{- $old := `<li><input checked="" disabled="" type="checkbox"> ` -}}
+{{- $new := `<li class="checked"><i class="far fa-check-square fa-fw"></i><span class="unselectable"> </span>` -}}
+{{- $content = replace $content $old $new -}}
+
+{{- return safeHTML $content -}}

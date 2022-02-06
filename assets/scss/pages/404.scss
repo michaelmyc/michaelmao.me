@@ -1,0 +1,15 @@
+@import "../variables.scss";
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.error-code {
+  color: $dark;
+  font-size: 12em;
+  margin: 0;
+}
