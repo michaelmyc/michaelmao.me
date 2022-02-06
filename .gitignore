@@ -1,2 +1,19 @@
-public
-node_modules
+# Hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Nodejs
+/node_modules/
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
