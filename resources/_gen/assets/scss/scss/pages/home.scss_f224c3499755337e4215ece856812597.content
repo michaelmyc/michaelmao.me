@@ -1,1 +1,0 @@
-.message-container{display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;height:100%}.message-large{color:#98a0a8;font-size:4em;margin:0}.message{color:#98a0a8;margin:0}

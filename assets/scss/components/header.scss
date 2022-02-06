@@ -111,13 +111,14 @@ header {
     width: 100vw;
     height: 100vh;
     z-index: 1;
-    background-color: black;
-    transition: all 0.6s linear;
+    background-color: none;
+    transition: all 0.4s linear;
   }
 
   #burger-mask.apply-mask {
     opacity: 0.4;
     visibility: visible;
+    background-color: black;
   }
 }
 

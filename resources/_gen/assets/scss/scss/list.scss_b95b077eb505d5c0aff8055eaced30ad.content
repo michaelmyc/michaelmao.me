@@ -1,1 +1,0 @@
-.list-container{display:flex;flex-direction:column;gap:1em}.list-item{display:flex;flex-direction:column;gap:.2em}.list-item .list-title-line{display:flex;justify-content:space-between}.list-item .list-title-line .list-detail{color:#98a0a8}.list-item .list-description{color:#dde1e4}.year{color:#98a0a8;text-align:right;margin-top:1em;margin-bottom:.4em}
