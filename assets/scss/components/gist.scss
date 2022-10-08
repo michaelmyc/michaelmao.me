@@ -1,0 +1,150 @@
+$nord0: #2e3440;
+$nord1: #3b4252;
+$nord2: #434c5e;
+$nord3: #4c566a;
+$nord4: #d8dee9;
+$nord5: #e5e9f0;
+$nord6: #eceff4;
+$nord7: #8fbcbb;
+$nord8: #88c0d0;
+$nord9: #81a1c1;
+$nord10: #5e81ac;
+$nord11: #bf616a;
+$nord12: #d08770;
+$nord13: #ebcb8b;
+$nord14: #a3be8c;
+$nord15: #b48ead;
+$nord3-brightened: lighten($nord3, 10%);
+
+body .gist	{
+	.gist-file	{
+		border: none;
+		border-bottom: none;
+	}
+	
+	.gist-data {
+		background: $nord0;
+		border-radius: 4px 4px 0 0;
+		border-bottom: none !important;
+		color: $nord4;
+		font-size: 14px;
+		line-height: 1.4;
+    padding: 16px 16px 0;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .blob-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+		.blob-wrapper {
+			max-width: 100%;
+			padding-bottom: 16px;
+			overflow-x: auto;
+			overflow-y: hidden;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+		}
+	}
+	
+	.highlight {
+	    background: $nord0;
+	    max-width: 800px;
+	    overflow-x: scroll;
+	    border: none;
+	    td, tbody	{
+		    border: none;
+	    }
+	}
+	.blob-num,
+	.blob-code-inner,
+	.pl-ent,
+	.pl-s1,
+	.pl-s1 .pl-s2,
+	.pl-smi,
+	.pl-smp,
+	.pl-stj,
+	.pl-vo,
+	.pl-vpf {
+	    color: $nord4;
+	}
+	.pl-c,
+	.pl-c span {
+	    color: $nord3-brightened;
+	    font-style: italic;
+	}
+	.pl-mb {
+	    color: $nord4;
+	    font-weight: 700;
+	}
+	.pl-mh .pl-en {
+	    color: $nord4;
+	    font-weight: 700;
+	}
+	.pl-mi {
+	    color: $nord4;
+	    font-style: italic;
+	}
+	.pl-c1 {
+	    color: $nord15;
+	}
+  .pl-sr .pl-cce {
+      color: $nord13;
+  }
+	.pl-e,
+	.pl-k,
+	.pl-mdh,
+	.pl-mdr,
+	.pl-ml,
+	.pl-mm,
+	.pl-mo,
+	.pl-mp,
+	.pl-mr,
+	.pl-ms,
+	.pl-s1 .pl-v,
+	.pl-s3 {
+	    color: $nord9;
+	}
+	.pl-en,
+	.pl-v {
+	    color: $nord8;
+	}
+	.pl-mh,
+	.pl-mq {
+	    color: $nord4;
+	}
+	.pl-pds,
+	.pl-s,
+	.pl-s1 .pl-pse .pl-s2,
+	.pl-sv {
+	    color: $nord14;
+	}
+	.pl-sr,
+	.pl-sr .pl-sra,
+	.pl-sr .pl-sre,
+	.pl-src {
+	    color: $nord13;
+	}
+	.pl-mi1,
+	.pl-mdht {
+	    color: $nord4;
+	    background: #a4bf8d80;
+	}
+	.pl-md,
+	.pl-mdhf,
+	.pl-id,
+	.pl-ii {
+	    color: $nord4;
+	    background: #be606980;
+	}
+	
+	.gist-meta	{
+		background: $nord3;
+		border-radius: 0 0 4px 4px;
+		font-size: 14px;
+		padding: 6px 16px;
+    color: $nord4;
+    a	{
+		  color: $nord8;
+		}
+	}
+}

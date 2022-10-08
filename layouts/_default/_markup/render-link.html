@@ -1,4 +1,6 @@
-{{ if ne ( substr ( .Destination | safeURL ) 0 1 ) '/' }}
+{{ $prefix := substr ( .Destination | safeURL ) 0 1 }}
+
+{{ if and (ne $prefix "/") (ne $prefix "#") }}
   <a href="{{ .Destination | safeURL }}"
     target="_blank"
     rel="noopener"

@@ -1,5 +1,5 @@
 <head>
-  {{ $coverUrl := cond ( isset .Params "coverImage" ) .Params.CoverImage .Site.Params.CoverImage }}
+  {{ $coverUrl := cond ( isset .Params "coverimage" ) .Params.CoverImage .Site.Params.CoverImage }}
   {{ $description := cond ( ne .Description "" ) .Description .Site.Params.SiteDescription }}
 
   {{/*  Primary Meta Tags  */}}
@@ -7,6 +7,7 @@
   <meta name="title" content="{{ .Site.Title }} - {{ .Title }}">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <meta name="description" content="{{ $description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   {{/*  Open Graph / Facebook  */}}
   <meta property="og:type" content="website">
@@ -71,18 +72,47 @@
 
   {{/*  dynamically size widescreen header  */}}
   <script>
-    const maxHeaderHeight = 160;
+    var lastScrollHeight = 0;
+
+    const maxHeaderHeight = 160; // $header-height
     const minHeaderHeight = 80;
+    var desktopHeaderOffset = 0;
+
+    const topBarHeightEm = 4;
+    const burgerMenuItems = 4;
+    const burgerMenuItemHeightEm = 4;
+    const burgerMenuHeightEm = burgerMenuItemHeightEm * burgerMenuItems
+    var mobileHeaderOffset = 0;
 
     window.onscroll = function() {
-      if (document.body.scrollTop <= maxHeaderHeight ||
-          document.documentElement.scrollTop <= maxHeaderHeight)
+      currentScrollHeight = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      scrollDelta = currentScrollHeight - lastScrollHeight;
+
+      // desktop header
+      if (currentScrollHeight <= maxHeaderHeight)
       {
-        scrollHeight = Math.min(Math.max(document.body.scrollTop, document.documentElement.scrollTop), maxHeaderHeight);
-        headerHeight = minHeaderHeight + (maxHeaderHeight - minHeaderHeight) * (maxHeaderHeight - scrollHeight) / maxHeaderHeight;
+        truncatedScrollHeight = Math.min(currentScrollHeight, maxHeaderHeight);
+        headerHeight = minHeaderHeight + (maxHeaderHeight - minHeaderHeight) * (maxHeaderHeight - truncatedScrollHeight) / maxHeaderHeight;
         document.querySelectorAll("header>div.widescreen")[0]
           .style.height = `${headerHeight}px`;
       }
+      if (currentScrollHeight > maxHeaderHeight)
+      {
+        desktopHeaderOffset = Math.max(Math.min(desktopHeaderOffset - scrollDelta, 0), -minHeaderHeight);
+        document.querySelectorAll("header>div.widescreen")[0]
+          .style.top = `${desktopHeaderOffset}px`;
+        document.querySelectorAll("header>div.widescreen")[0]
+          .style.height = `${minHeaderHeight}px`;
+      }
+
+      // mobile header
+      header = document.querySelectorAll("header>div.mobile>div.burger-icon-container")[0];
+      topBarHeight = getComputedStyle(header).height.match(/[+-]?([0-9]*[.]?[0-9]+)px/)[1];
+      mobileHeaderOffset = Math.max(Math.min(mobileHeaderOffset - scrollDelta, 0), -topBarHeight);
+      headerTop = getComputedStyle(header).top.match(/[+-]?([0-9]*[.]?[0-9]+)px/)[1];
+      header.style.top = `${mobileHeaderOffset}px`;
+
+      lastScrollHeight = currentScrollHeight;
     };
   </script>
 

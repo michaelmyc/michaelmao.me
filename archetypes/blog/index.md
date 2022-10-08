@@ -7,6 +7,7 @@ series: ""
 tags: []
 description: ""
 coverImage: ""
+autonumbering: true
 katex:
   enable: true
   singleDollarDeliminator: true

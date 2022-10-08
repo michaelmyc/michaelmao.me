@@ -1,5 +1,19 @@
-$background: #444b53;
+// Colors
+$background: #151b22;
 $main: #dde1e4;
-$accent: #dca97b;
+$accent: #779dcf;
 $light: white;
 $dark: #98a0a8;
+
+// Desktop header variables (if you change this, please make appropriate changes in layouts/partials/head.html)
+$header-height: 160px;
+$header-padding: 80px;
+$header-nav-gap: 60px;
+
+// Burger menu variables (if you change this, please make appropriate changes in layouts/partials/head.html)
+$top-bar-height: 4em;
+$burger-line-height: 0.2em;
+$burger-line-gap: 0.4em;
+
+$burger-menu-items: 4;
+$burger-menu-item-height: 4em;

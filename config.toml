@@ -1,6 +1,7 @@
 baseURL = 'https://michaelmao.me/'
 languageCode = 'en-us'
 title = 'Michael Mao'
+enableEmoji = true
 
 [params]
   author = 'Michael (Yicong) Mao'

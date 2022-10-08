@@ -16,7 +16,7 @@
       <i class="series">Part of <a href="{{ $series.RelPermalink }}">{{ . }}</a></i>
     {{ end }}
   </div>
-  <article>
+  <article {{- if .Param "autonumbering" }} autonumbering {{- end }}>
     {{- .Content | partial "functions/post-process.html" -}}
   </article>
 {{ end }}

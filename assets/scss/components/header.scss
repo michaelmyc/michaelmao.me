@@ -1,12 +1,18 @@
-@import "./variables.scss";
+@import "../variables.scss";
+
+$burger-height: $burger-line-gap * 2 + $burger-line-height * 3;
+$burger-width: $burger-height * 1.2;
+$burger-margin: ($top-bar-height - $burger-height) / 2;
+
+$burger-menu-height: $burger-menu-items * $burger-menu-item-height;
 
 header {
   position: absolute;
 
   div.widescreen {
     z-index: 1;
-    height: 160px;
-    padding: 0 80px;
+    height: $header-height;
+    padding: 0 $header-padding;
     background-color: $background;
     display: flex;
     position: fixed;
@@ -19,7 +25,7 @@ header {
       display: flex;
       align-items: center;
       justify-content: right;
-      gap: 60px;
+      gap: $header-nav-gap;
 
       a {
         color: $main;
@@ -30,13 +36,15 @@ header {
         content: "";
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: 50%;
         width: 0%;
+        bottom: -2px;
         border-bottom: 2px solid $main;
         transition: 0.4s;
       }
 
       a:hover:after {
+        left: 0;
         width: 100%;
       }
     }
@@ -50,7 +58,7 @@ header {
   div.mobile {
     .burger-icon-container {
       width: 100vw;
-      height: 4em;
+      height: $top-bar-height;
       position: fixed;
       display: flex;
       align-items: center;
@@ -61,16 +69,16 @@ header {
 
     #burger-icon {
       cursor: pointer;
-      width: 2em;
-      margin-left: 1.5em;
+      width: $burger-width;
+      margin-left: $burger-margin;
 
       div {
-        height: 0.2em;
+        height: $burger-line-height;
         background-color: $main;
       }
 
       .burger-icon-middle {
-        margin: 0.5em 0;
+        margin: $burger-line-gap 0;
       }
     }
 
@@ -78,8 +86,8 @@ header {
       position: fixed;
       width: 100vw;
       display: flex;
-      height: 16em;
-      top: -12em;
+      height: $burger-menu-height;
+      top: -$burger-menu-height;
       background-color: $background;
       z-index: 5;
       align-items: center;
@@ -98,7 +106,7 @@ header {
     }
 
     #burger-menu.open-menu {
-      top: 4em;
+      top: $burger-menu-item-height;
     }
   }
 
@@ -112,13 +120,13 @@ header {
     height: 100vh;
     z-index: 1;
     background-color: none;
-    transition: all 0.4s linear;
+    transition: all 0.4s ease-in-out;
   }
 
   #burger-mask.apply-mask {
-    opacity: 0.4;
+    opacity: 1;
     visibility: visible;
-    background-color: black;
+    backdrop-filter: blur(5px) brightness(0.4);
   }
 }
 
