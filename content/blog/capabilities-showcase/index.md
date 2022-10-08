@@ -27,7 +27,7 @@ Morbi tempus iaculis urna id volutpat. Phasellus vestibulum lorem sed risus ultr
 
 ## Example YouTube Embed
 
-<!-- {{< youtube LXb3EKWsInQ >}} -->
+{{< youtube LXb3EKWsInQ >}}
 
 ## Example \\(\LaTeX\\)
 
