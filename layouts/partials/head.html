@@ -84,11 +84,7 @@
     const burgerMenuHeightEm = burgerMenuItemHeightEm * burgerMenuItems
     var mobileHeaderOffset = 0;
 
-    window.onscroll = function() {
-      currentScrollHeight = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
-      scrollDelta = currentScrollHeight - lastScrollHeight;
-
-      // desktop header
+    function setDesktopHeaderStyle(currentScrollHeight, scrollDelta) {
       if (currentScrollHeight <= maxHeaderHeight)
       {
         truncatedScrollHeight = Math.min(currentScrollHeight, maxHeaderHeight);
@@ -104,16 +100,31 @@
         document.querySelectorAll("header>div.widescreen")[0]
           .style.height = `${minHeaderHeight}px`;
       }
+    }
 
-      // mobile header
+    function setMobileHeaderStyle(scrollDelta) {
       header = document.querySelectorAll("header>div.mobile>div.burger-icon-container")[0];
       topBarHeight = getComputedStyle(header).height.match(/[+-]?([0-9]*[.]?[0-9]+)px/)[1];
       mobileHeaderOffset = Math.max(Math.min(mobileHeaderOffset - scrollDelta, 0), -topBarHeight);
       headerTop = getComputedStyle(header).top.match(/[+-]?([0-9]*[.]?[0-9]+)px/)[1];
       header.style.top = `${mobileHeaderOffset}px`;
+    }
+
+    adjustHeaderStyles = function() {
+      currentScrollHeight = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      scrollDelta = currentScrollHeight - lastScrollHeight;
+
+      // desktop header
+      setDesktopHeaderStyle(currentScrollHeight, scrollDelta);
+
+      // mobile header
+      setMobileHeaderStyle(scrollDelta);
 
       lastScrollHeight = currentScrollHeight;
     };
+
+    window.onload = adjustHeaderStyles;
+    window.onscroll = adjustHeaderStyles;
   </script>
 
   {{/*  offset hash link scroll height  */}}
