@@ -85,13 +85,11 @@
     var mobileHeaderOffset = 0;
 
     function setDesktopHeaderStyle(currentScrollHeight, scrollDelta) {
-      if (currentScrollHeight <= maxHeaderHeight)
-      {
-        truncatedScrollHeight = Math.min(currentScrollHeight, maxHeaderHeight);
-        headerHeight = minHeaderHeight + (maxHeaderHeight - minHeaderHeight) * (maxHeaderHeight - truncatedScrollHeight) / maxHeaderHeight;
-        document.querySelectorAll("header>div.widescreen")[0]
-          .style.height = `${headerHeight}px`;
-      }
+      truncatedScrollHeight = Math.min(currentScrollHeight, maxHeaderHeight);
+      headerHeight = minHeaderHeight + (maxHeaderHeight - minHeaderHeight) * (maxHeaderHeight - truncatedScrollHeight) / maxHeaderHeight;
+      document.querySelectorAll("header>div.widescreen")[0]
+        .style.height = `${headerHeight}px`;
+        
       if (currentScrollHeight > maxHeaderHeight)
       {
         desktopHeaderOffset = Math.max(Math.min(desktopHeaderOffset - scrollDelta, 0), -minHeaderHeight);
