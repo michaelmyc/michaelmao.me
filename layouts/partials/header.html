@@ -8,7 +8,7 @@
     </nav>
   </div>
   <div class="mobile">
-    <div class="burger-icon-container">
+    <div id="burger-icon-container">
       <div id="burger-icon">
         <div></div>
         <div class="burger-icon-middle"></div>
@@ -53,5 +53,33 @@
 
     document.getElementById("burger-icon").addEventListener("click", toggleMenu);
     document.getElementById("burger-mask").addEventListener("click", toggleMenu);
+  </script>
+
+  {{/*  dynamically size widescreen header  */}}
+  <script>
+    var lastScrollHeight = 0;
+
+    const maxHeaderHeight = 160; // $header-height
+    const minHeaderHeight = 80;
+    var desktopHeaderOffset = 0;
+
+    function setDesktopHeaderStyle(currentScrollHeight, scrollDelta) {
+      truncatedScrollHeight = Math.min(currentScrollHeight, maxHeaderHeight);
+      headerHeight = minHeaderHeight + (maxHeaderHeight - minHeaderHeight) * (maxHeaderHeight - truncatedScrollHeight) / maxHeaderHeight;
+      document.querySelectorAll("header>div.widescreen")[0]
+        .style.height = `${headerHeight}px`;
+    }
+
+    adjustHeaderStyles = function() {
+      currentScrollHeight = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      scrollDelta = currentScrollHeight - lastScrollHeight;
+
+      // desktop header
+      setDesktopHeaderStyle(currentScrollHeight, scrollDelta);
+
+      lastScrollHeight = currentScrollHeight;
+    };
+
+    window.onscroll = adjustHeaderStyles;
   </script>
 </header>

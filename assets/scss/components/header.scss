@@ -13,13 +13,13 @@ header {
     z-index: 1;
     height: $header-height;
     padding: 0 $header-padding;
-    background-color: $background;
     display: flex;
     position: fixed;
     top: 0;
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    background: $background;
 
     nav {
       display: flex;
@@ -56,21 +56,22 @@ header {
   }
 
   div.mobile {
-    .burger-icon-container {
+    #burger-icon-container {
       width: 100vw;
       height: $top-bar-height;
       position: fixed;
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       top: 0;
       z-index: 10;
-      background-color: $background;
+      background: $background;
     }
 
     #burger-icon {
       cursor: pointer;
       width: $burger-width;
-      margin-left: $burger-margin;
+      margin-right: $burger-margin;
 
       div {
         height: $burger-line-height;
@@ -134,10 +135,18 @@ header {
   header div.mobile {
     display: none;
   }
+
+  #content * {
+    scroll-margin-top: $min-header-height;
+  }
 }
 
 @media (orientation: portrait) {
   header div.widescreen {
     display: none;
+  }
+
+  #content * {
+    scroll-margin-top: 1.25*$top-bar-height;
   }
 }
