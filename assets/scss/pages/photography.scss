@@ -1,0 +1,89 @@
+
+
+@media (orientation: landscape) {
+  // normal screen
+  @media (max-aspect-ratio: 2/1) {
+    #content {
+      margin: 160px auto 0;
+      width: 80vw;
+    }
+  }
+
+  // ultrawide screen
+  @media (min-aspect-ratio: 2/1) {
+    #content {
+      margin: 160px auto 0;
+      width: 60vw;
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  // ipad screen
+  @media (min-aspect-ratio: 3/5) {
+    #content {
+      width: 80vmin !important;
+    }
+  }
+
+  #content {
+    width: calc(100vw - 3em);
+  }
+
+  .masonry-item {
+    width: 100% !important;
+  }
+}
+
+.masonry-single-width {
+  width: calc((100% - 2.4em) / 3);
+}
+
+.masonry-double-width {
+  width: calc(100% - (100% - 2.4em) / 3 - 1.2em);
+}
+
+.masonry-item {
+  margin: 0.6em 0;
+  transition: all ease-out 0.3s;
+
+  h2 {
+    margin-bottom: 0.3em;
+  }
+
+  p {
+    margin-bottom: 0.2em;
+  }
+
+  .masonry-info {
+    position: absolute;
+    width: 80%;
+    bottom: 1em;
+    opacity: 0;
+    transition: all ease-out 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    margin: 0 10%;
+    text-align: center;
+  }
+
+  img {
+    transition: all ease-out 0.3s;
+  }
+}
+
+.masonry-item:hover {
+  transform: scale(1.02);
+  z-index: 1;
+
+  img {
+    filter: brightness(0.3);
+  }
+
+  .masonry-info {
+    opacity: 1;
+    z-index: 1;
+  }
+}

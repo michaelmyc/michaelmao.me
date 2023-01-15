@@ -1,0 +1,22 @@
+{{ define "main" }}
+  {{ partial "functions/load-scss.html" "scss/pages/blog.scss" }}
+  <div class="title">
+    <h1>{{ .Title }}</h1>
+    <h1 class="subtitle">{{ .Params.Subtitle }}</h1>
+  </div>
+  <div class="taxonomy-info">
+    <div class="tags">
+      {{ range .Params.Tags }}
+        <i><a href="/tags/{{ . }}">#{{ . }}</a></i>
+      {{ end }}
+    </div>
+    {{ with .Params.Series }}
+      {{ $series := ( site.GetPage "series" ).Pages }}
+      {{ $series := ( index ( where $series "Title" . ) 0 ) }}
+      <i class="series">Part of <a href="{{ $series.RelPermalink }}">{{ . }}</a></i>
+    {{ end }}
+  </div>
+  <article {{- if .Param "autonumbering" }} autonumbering {{- end }}>
+    {{- .Content | partial "functions/post-process.html" -}}
+  </article>
+{{ end }}

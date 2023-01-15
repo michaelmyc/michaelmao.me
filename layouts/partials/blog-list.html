@@ -1,9 +1,15 @@
 {{ partial "functions/load-scss.html" "scss/pages/list.scss" }}
-{{ range sort (.Pages.GroupByDate "2006") "Key" "desc" }}
-  <h2 class="year">{{ .Key }}</h2>
-  <div class="list-container">
-    {{ range sort .Pages "Date" "desc" }}
-      {{- partial "blog.html" . -}}
-    {{ end }}
-  </div>
+{{ $listedBlogs := where .Pages "Params.unlisted" "!=" true }}
+{{ if gt ( len $listedBlogs ) 0 }}
+  {{ $groupedBlogs := $listedBlogs.GroupByDate "January, 2006" }}
+  {{ $paginator := .Paginate $groupedBlogs }}
+  {{ range $paginator.PageGroups }}
+    <h2 class="year">{{ .Key }}</h2>
+    <div class="list-container">
+      {{ range sort .Pages "Date" "desc" }}
+        {{- partial "blog-entry.html" . -}}
+      {{ end }}
+    </div>
+  {{ end }}
+  {{ template "_internal/pagination.html" . }}
 {{ end }}

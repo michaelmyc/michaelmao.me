@@ -1,5 +1,15 @@
 @import "../variables.scss";
 
+@media (orientation: portrait) {
+  .project-card-cover-image {
+    height: 13vh !important;
+  }
+
+  .project-card-text {
+    padding: 0.8em 1.4em !important;
+  }
+}
+
 .list-container {
   display: flex;
   flex-direction: column;
@@ -30,4 +40,50 @@
   text-align: right;
   margin-top: 1em;
   margin-bottom: 0.4em;
+}
+
+.pagination {
+  margin-top: 1.4em;
+  margin-bottom: 0.4em;
+  list-style-type: none;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  user-select: none;
+  font-size: 1.1em;
+
+  .disabled > .page-link {
+    color: $dark;
+  }
+
+  .active > .page-link {
+    color: $main;
+  }
+
+  .page-link {
+    padding: 0.3em;
+  }
+}
+
+.project-card {
+  background-color: $card;
+  border-radius: 0.4em;
+  transition: all 0.3s ease-out;
+  color: $main;
+
+  .project-card-cover-image {
+    border-top-left-radius: 0.4em;
+    border-top-right-radius: 0.4em;
+    height: 20vh;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .project-card-text {
+    padding: 1.2em 1.4em;
+  }
+}
+
+.project-card:hover {
+  transform: scale(1.02);
 }

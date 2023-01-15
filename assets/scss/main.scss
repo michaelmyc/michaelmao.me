@@ -44,6 +44,10 @@ p {
   line-height: 1.5;
 }
 
+picture img{
+  display: block;
+}
+
 .dark {
   color: $dark;
 }
@@ -56,6 +60,26 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.title {
+  margin-bottom: 1em;
+
+  h1 {
+    margin: 0;
+  }
+
+  .subtitle {
+    color: $dark;
+    font-size: 1.5em;
+    margin-top: 0.2em;
+  }
 }
 
 @media (orientation: landscape) {
@@ -72,25 +96,6 @@ p {
     #content {
       margin: 160px auto 0;
       width: 80vmin;
-    }
-  }
-
-  h1 {
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
-
-  .title {
-    margin-bottom: 1em;
-
-    h1 {
-      margin: 0;
-    }
-
-    .subtitle {
-      color: $dark;
-      font-size: 1.5em;
-      margin-top: 0.2em;
     }
   }
 }
@@ -132,4 +137,28 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: $accent;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+
+  .message-large {
+    color: $dark;
+    font-size: 3em;
+    margin: 0;
+    text-decoration: underline;
+  }
+
+  .message {
+    color: $dark;
+    margin: 0;
+  }
 }

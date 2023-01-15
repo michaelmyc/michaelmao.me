@@ -1,0 +1,41 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ partial "functions/load-scss.html" "scss/pages/photography.scss" }}
+  <div class="masonry unselectable">
+    {{ range sort .Pages "Weight" }}
+      {{ $useDoubleWidth := cond ( isset .Params "doublewidth" ) .Params.DoubleWidth false }}
+      {{ $masonryWidth := cond $useDoubleWidth "masonry-double-width" "masonry-single-width" }}
+      <div class="masonry-item {{ $masonryWidth }}">
+        <div class="masonry-info">
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Description }}</p>
+          {{ $image := .Page.Resources.GetMatch .Params.FileName }}
+          <a href="{{ $image.RelPermalink }}" target="_blank" rel="noopener">Full Resolution Image</a>
+        </div>
+        {{ partial "functions/dynamic-img.html" ( dict "Context" . "ImagePath" .Params.FileName "ContainerClass" "masonry-image" ) }}
+      </div>
+    {{ end }}
+  </div>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script>
+    var elem = document.querySelector('.masonry');
+    var style = window.getComputedStyle(elem, null).getPropertyValue('font-size');
+    var em = parseFloat(style);
+    var msnry = new Masonry( elem, {
+      itemSelector: '.masonry-item',
+      columnWidth: '.masonry-item',
+      gutter: 1.2 * em
+    });
+
+    addEventListener("transitionend", (ev) => {
+      if (ev.propertyName == "opacity") {
+        if (ev.target.parentElement.matches(':hover')) {
+          ev.target.style = "pointer-events: all;";
+        }
+        else {
+          ev.target.style = "";
+        }
+      }
+    });
+  </script>
+{{ end }}

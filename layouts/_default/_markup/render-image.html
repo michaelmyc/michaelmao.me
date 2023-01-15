@@ -1,20 +1,5 @@
 <div class="image-container">
-  {{ if ne ( substr ( .Destination | safeURL ) 0 1 ) '/' }}
-    <img
-      src="{{ .Destination | safeURL }}"
-      alt="{{ .Text }}"
-      loading="lazy"
-    />
-  {{ else }}
-    {{ $img := imageConfig (add "/static" (.Destination | safeURL)) }}
-    <img
-      src="{{ .Destination | safeURL }}"
-      alt="{{ .Text }}"
-      loading="lazy"
-      width="{{ $img.Width }}"
-      height="{{ $img.Height }}"
-    />
-  {{ end }}
+  {{ partial "functions/dynamic-img.html" ( dict "Context" . "ImagePath" .Destination ) }}
   {{ if .Title }}
     <p class="dark">{{ .Title }}</p>
   {{ end }}

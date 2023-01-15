@@ -1,0 +1,6 @@
+{{ partial "functions/load-scss.html" "scss/pages/list.scss" }}
+<div class="list-container">
+  {{ range sort .Pages "Date" "desc" }}
+    {{- partial "project-card.html" . -}}
+  {{ end }}
+</div>

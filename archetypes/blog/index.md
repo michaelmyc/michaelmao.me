@@ -3,6 +3,7 @@ title: "{{ replace .Name "-" " " | title }}"
 subtitle: ""
 date: {{ .Date }}
 draft: true
+unlisted: false
 series: ""
 tags: []
 description: ""

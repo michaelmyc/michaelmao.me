@@ -1,6 +1,6 @@
 {{ partial "functions/load-scss.html" "scss/pages/list.scss" }}
 <div class="list-container">
   {{ range sort .Pages "Title" }}
-    {{- partial "series.html" . -}}
+    {{- partial "series-entry.html" . -}}
   {{ end }}
 </div>

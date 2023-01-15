@@ -1,0 +1,10 @@
+{{ partial "functions/load-scss.html" "scss/pages/contact.scss" }}
+<div class="contact">
+  <div class="contact-icons-container">
+    {{ range site.Params.Contact }}
+      <div class="contact-icon">
+        <a href='{{ index . "url" }}' target="_blank" rel="noopener">{{ index . "icon" | safeHTML }}</a>
+      </div>
+    {{ end }}
+  </div>
+</div>

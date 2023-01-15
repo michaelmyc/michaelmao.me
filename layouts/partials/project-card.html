@@ -1,0 +1,9 @@
+<a class="list-item project-card" href="{{ .RelPermalink }}">
+  {{ partial "functions/dynamic-img.html" ( dict "Context" . "ImagePath" .Params.CoverImage "Alt" "cover image" "Class" "project-card-cover-image" ) }}
+  <div class="project-card-text">
+    <div class="list-title-line">
+      <h3>{{ .Title }}</h3>
+    </div>
+    <p>{{ .Params.Description }}</p>
+  </div>
+</a>

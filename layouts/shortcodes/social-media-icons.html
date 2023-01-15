@@ -1,5 +1,0 @@
-{{ range site.Params.Contact }}
-  <div class="contact-icon">
-    <a href='{{ index . "url" }}' target="_blank" rel="noopener">{{ index . "icon" | safeHTML }}</a>
-  </div>
-{{ end }}

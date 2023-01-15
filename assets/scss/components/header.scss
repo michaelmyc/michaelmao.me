@@ -10,7 +10,7 @@ header {
   position: absolute;
 
   div.widescreen {
-    z-index: 1;
+    z-index: 10;
     height: $header-height;
     padding: 0 $header-padding;
     display: flex;
@@ -119,7 +119,7 @@ header {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1;
+    z-index: 3;
     background-color: none;
     transition: all 0.4s ease-in-out;
   }

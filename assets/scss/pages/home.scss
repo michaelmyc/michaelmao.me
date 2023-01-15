@@ -1,22 +1,5 @@
 @import "../variables.scss";
 
-.message-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
+.mock {
   height: 100%;
-}
-
-.message-large {
-  color: $dark;
-  font-size: 3em;
-  margin: 0;
-  text-decoration: underline;
-}
-
-.message {
-  color: $dark;
-  margin: 0;
 }

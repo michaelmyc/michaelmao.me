@@ -2,6 +2,7 @@ baseURL = 'https://michaelmao.me/'
 languageCode = 'en-us'
 title = 'Michael Mao'
 enableEmoji = true
+paginate = 8
 
 [params]
   author = 'Michael (Yicong) Mao'
@@ -16,11 +17,11 @@ enableEmoji = true
     name = 'Blog'
     url = '/blog'
   [[params.menu]]
-    name = 'Series'
-    url = '/series'
+    name = 'Project'
+    url = '/project'
   [[params.menu]]
-    name = 'Contact'
-    url = '/contact'
+    name = 'Photography'
+    url = '/photography'
   
   [[params.contact]]
     name = 'Email'
