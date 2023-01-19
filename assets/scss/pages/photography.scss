@@ -46,6 +46,7 @@
 .masonry-item {
   margin: 0.6em 0;
   transition: all ease-out 0.3s;
+  overflow: hidden;
 
   h2 {
     margin-bottom: 0.3em;
@@ -58,7 +59,7 @@
   .masonry-info {
     position: absolute;
     width: 80%;
-    bottom: 1em;
+    bottom: 1.4em;
     opacity: 0;
     transition: all ease-out 0.3s;
     display: flex;
@@ -69,17 +70,18 @@
     text-align: center;
   }
 
-  img {
+  .masonry-image {
+    display: block;
     transition: all ease-out 0.3s;
   }
 }
 
 .masonry-item:hover {
-  transform: scale(1.02);
   z-index: 1;
 
-  img {
+  .masonry-image {
     filter: brightness(0.3);
+    transform: scale(1.05);
   }
 
   .masonry-info {
