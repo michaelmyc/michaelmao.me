@@ -26,7 +26,7 @@ paginate = 8
   [[params.contact]]
     name = 'Email'
     icon = '<i class="fa-regular fa-envelope"></i>'
-    url = 'mailto:michael.mao99@gmail.com'
+    url = 'https://forms.gle/ieRdQMogaWTFb6YUA'
   [[params.contact]]
     name = 'Github'
     icon = '<i class="fa-brands fa-github"></i>'
@@ -39,6 +39,10 @@ paginate = 8
     name = 'Twitter'
     icon = '<i class="fa-brands fa-twitter"></i>'
     url = 'https://twitter.com/michaelmaoyc'
+  [[params.contact]]
+    name = 'Google Scholar'
+    icon = '<i class="ai ai-google-scholar"></i>'
+    url = 'https://scholar.google.com/citations?user=uTEhFhkAAAAJ&hl=en'
 
 
 [taxonomies]
