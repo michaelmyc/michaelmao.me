@@ -1,0 +1,1 @@
+alias=`whoami | cut -d'.' -f2`; docker run --gpus all -it --rm --ipc=host --privileged -v /home/${alias}:/workspace vlmo bash

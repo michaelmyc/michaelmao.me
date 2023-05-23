@@ -1,0 +1,62 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "run.py",
+      "type": "python",
+      "request": "launch",
+      "program": "run.py",
+      "args": [
+        "with",
+        "data_root=data/arrow",
+        "num_gpus=2",
+        "num_nodes=1",
+        "task_finetune_adv_vqa_no_answer_base",
+        "whole_word_masking=True",
+        "step200k",
+        "per_gpu_batchsize=8",
+        "load_path=${workspaceFolder}/checkpoints/provided_vlmo/vlmo_base_patch16_224.pt",
+        "log_dir=logs"
+      ],
+      "console": "integratedTerminal",
+      "env": {
+        "INIT_CKPT": "${workspaceFolder}/checkpoints/provided_vlmo/vlmo_base_patch16_224.pt"
+      },
+      "justMyCode": false
+    },
+    {
+      "name": "test run.py",
+      "type": "python",
+      "request": "launch",
+      "program": "run.py",
+      "args": [
+        "with",
+        "data_root=data/arrow",
+        "num_gpus=2",
+        "num_nodes=1",
+        "task_itm_infer_base_vg",
+        "whole_word_masking=True",
+        "step200k",
+        "per_gpu_batchsize=512",
+        "load_path=${workspaceFolder}/checkpoints/provided_vlmo/vlmo_base_patch16_224.pt",
+        "log_dir=logs"
+      ],
+      "console": "integratedTerminal",
+      "env": {
+        "INIT_CKPT": "${workspaceFolder}/checkpoints/provided_vlmo/vlmo_base_patch16_224.pt"
+      },
+      "justMyCode": false
+    },
+    {
+      "name": "run current file",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+  ]
+}

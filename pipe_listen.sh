@@ -1,0 +1,1 @@
+while true; do eval $(cat pipe | sed 's/~/\/home\/$1/'); done
