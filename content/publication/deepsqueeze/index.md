@@ -3,7 +3,7 @@ title: "DeepSqueeze: Deep Semantic Compression for Tabular Data"
 subtitle: ""
 authors: "Amir Ilkhechi, Andrew Crotty, Alex Galakatos, Yicong Mao, Grace Fan, Xiran Shi, Ugur Cetintemel"
 date: 2023-06-13T01:09:56-07:00
-draft: true
+draft: false
 weight: 0
 description: "SIGMOD 2020"
 coverImage: "deepsqueeze.png" # a 5:1 image with important content in the center 3:1 zone for best effect
