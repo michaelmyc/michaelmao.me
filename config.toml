@@ -5,7 +5,7 @@ enableEmoji = true
 paginate = 8
 
 [params]
-  author = 'Michael (Yicong) Mao'
+  author = 'Michael Mao'
   fontawesome = '13bff49e18'
   siteDescription = 'I am Michael Mao, a software engineer and a machine learning enthusiast. This is my blog where I write about everything from technical content to random musings.'
   coverImage = '/assets/cover.webp'
@@ -20,13 +20,12 @@ paginate = 8
     name = 'Project'
     url = '/project'
   [[params.menu]]
+    name = 'Publication'
+    url = '/publication'
+  [[params.menu]]
     name = 'Photography'
     url = '/photography'
   
-  [[params.contact]]
-    name = 'Email'
-    icon = '<i class="fa-regular fa-envelope"></i>'
-    url = 'https://forms.gle/ieRdQMogaWTFb6YUA'
   [[params.contact]]
     name = 'Github'
     icon = '<i class="fa-brands fa-github"></i>'
@@ -41,7 +40,7 @@ paginate = 8
     url = 'https://twitter.com/michaelmaoyc'
   [[params.contact]]
     name = 'Google Scholar'
-    icon = '<i class="ai ai-google-scholar"></i>'
+    icon = '<i class="fa-solid fa-graduation-cap"></i>'
     url = 'https://scholar.google.com/citations?user=uTEhFhkAAAAJ&hl=en'
 
 

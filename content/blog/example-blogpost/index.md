@@ -3,7 +3,7 @@ title: "Example Blogpost"
 subtitle: "Example Subtitle"
 date: 2022-10-07T00:36:54-07:00
 draft: false
-unlisted: true
+unlisted: false
 series: "Example Series"
 tags: ["example", "test"]
 description: "Showcase of the capabilities of this blogging platform"

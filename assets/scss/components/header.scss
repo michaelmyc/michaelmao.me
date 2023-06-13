@@ -89,11 +89,12 @@ header {
       display: flex;
       height: $burger-menu-height;
       top: -$burger-menu-height;
-      background-color: $background;
+      background: darken($card, 7%);
       z-index: 5;
       align-items: center;
       flex-direction: column;
       transition: top 0.4s ease;
+      padding-bottom: 0.2em;
 
       a {
         font-size: 1.5em;

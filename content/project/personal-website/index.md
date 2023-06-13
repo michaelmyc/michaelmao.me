@@ -6,7 +6,7 @@ draft: true
 series: ""
 tags: []
 description: "This personal website was built from scratch with Hugo."
-coverImage: ""
+coverImage: "https://picsum.photos/id/900/800/600"
 autonumbering: true
 katex:
   enable: true

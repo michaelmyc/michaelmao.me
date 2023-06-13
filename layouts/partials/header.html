@@ -32,6 +32,7 @@
 
     function toggleMenu() {
       const openMenu = !document.getElementById("burger-menu").classList.contains("open-menu");
+      document.getElementById("burger-icon-container").classList.toggle("open-menu");
       document.getElementById("burger-menu").classList.toggle("open-menu");
       document.getElementById("burger-mask").classList.toggle("apply-mask");
       if (openMenu) {

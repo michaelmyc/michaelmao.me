@@ -8,21 +8,44 @@
     text-align: center;
   }
 
+  h3 {
+    text-align: center;
+  }
+
+  .email {
+    margin: 1em 0;
+    text-align: center;
+
+    .at-sign {
+      display: inline-block;
+      padding: 0 0.2em;
+    }
+  }
+
   .contact-icons-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4em;
     width: 100%;
     gap: 25px;
   
     .contact-icon {
       font-size: 2em;
-      padding: 0.4em;
+      width: 1.8em;
+      height: 2em;
       background-color: $background;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
   
       a {
         color: $main;
+      }
+
+      a:hover {
+        color: $dark;
       }
     }
   }
