@@ -1,11 +1,11 @@
 @import "../variables.scss";
 
 @media (orientation: portrait) {
-  .project-card-cover-image {
+  .card-cover-image {
     height: 13vh !important;
   }
 
-  .project-card-text {
+  .card-text {
     padding: 0.8em 1.4em !important;
   }
 }
@@ -35,7 +35,7 @@
   }
 }
 
-.year {
+.date-group {
   color: $dark;
   text-align: right;
   margin-top: 1em;
@@ -65,13 +65,13 @@
   }
 }
 
-.project-card {
+.card {
   background-color: $card;
   border-radius: 0.4em;
   transition: all 0.3s ease-out;
   color: $main;
 
-  .project-card-cover-image {
+  .card-cover-image {
     border-top-left-radius: 0.4em;
     border-top-right-radius: 0.4em;
     height: 20vh;
@@ -79,11 +79,12 @@
     object-fit: cover;
   }
 
-  .project-card-text {
+  .card-text {
     padding: 1.2em 1.4em;
   }
 }
 
-.project-card:hover {
+.card:hover {
   transform: scale(1.02);
+  color: $main;
 }

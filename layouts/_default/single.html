@@ -1,3 +1,5 @@
 {{ define "main" }}
+  {{ partial "functions/load-scss.html" "scss/pages/single.scss" }}
+  <h1>{{ .Title }}</h1>
   {{- .Content | partial "functions/post-process.html" -}}
 {{ end }}

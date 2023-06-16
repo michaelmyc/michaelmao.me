@@ -2,13 +2,24 @@ baseURL = 'https://michaelmao.me/'
 languageCode = 'en-us'
 title = 'Michael Mao'
 enableEmoji = true
-paginate = 8
 
 [params]
   author = 'Michael Mao'
   fontawesome = '13bff49e18'
-  siteDescription = 'I am Michael Mao, a software engineer and a machine learning enthusiast. This is my blog where I write about everything from technical content to random musings.'
+  siteDescription = 'I am Michael Mao, I build AI technologies that empower doctors to work more efficiently.'
   coverImage = '/assets/cover.webp'
+
+  # Pagination settings
+
+  paginateTexts = 8
+  paginateCards = 5
+
+  # Email Information
+
+  emailUsername = 'yicong_mao'
+  emailDomain = 'alumni.brown.edu'
+
+  # Menu Settings
 
   [[params.menu]]
     name = 'Home'
@@ -25,7 +36,13 @@ paginate = 8
   [[params.menu]]
     name = 'Photography'
     url = '/photography'
+
+  # Social Media Information
   
+  [[params.contact]]
+    name = 'Google Scholar'
+    icon = '<i class="fa-solid fa-graduation-cap"></i>'
+    url = 'https://scholar.google.com/citations?user=uTEhFhkAAAAJ&hl=en'
   [[params.contact]]
     name = 'Github'
     icon = '<i class="fa-brands fa-github"></i>'
@@ -39,10 +56,9 @@ paginate = 8
     icon = '<i class="fa-brands fa-twitter"></i>'
     url = 'https://twitter.com/michaelmaoyc'
   [[params.contact]]
-    name = 'Google Scholar'
-    icon = '<i class="fa-solid fa-graduation-cap"></i>'
-    url = 'https://scholar.google.com/citations?user=uTEhFhkAAAAJ&hl=en'
-
+    name = 'Instagram'
+    icon = '<i class="fa-brands fa-instagram"></i>'
+    url = 'https://www.instagram.com/michaelmaoyc/'
 
 [taxonomies]
   tags = "tags"

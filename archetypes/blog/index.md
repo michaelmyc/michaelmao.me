@@ -10,6 +10,6 @@ description: ""
 coverImage: "" # a 5:1 image with important content in the center 3:1 zone for best effect
 autonumbering: true
 katex:
-  enable: true
+  enable: false
   singleDollarDeliminator: true
 ---

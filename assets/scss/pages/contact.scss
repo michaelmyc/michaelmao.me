@@ -1,52 +1,26 @@
 @import "../variables.scss";
 
 .contact {
-  margin: 2em 0 0.5em 0;
+  // margin: 3em 0 0.5em 0;
   width: 100%;
 
-  h2 {
-    text-align: center;
-  }
+  // h2 {
+  //   text-align: center;
+  //   color: $dark;
+  // }
 
   h3 {
     text-align: center;
+    color: $dark;
   }
 
   .email {
-    margin: 1em 0;
-    text-align: center;
+    // margin: 1em 0;
+    // text-align: center;
 
     .at-sign {
       display: inline-block;
       padding: 0 0.2em;
-    }
-  }
-
-  .contact-icons-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 25px;
-  
-    .contact-icon {
-      font-size: 2em;
-      width: 1.8em;
-      height: 2em;
-      background-color: $background;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  
-      a {
-        color: $main;
-      }
-
-      a:hover {
-        color: $dark;
-      }
     }
   }
 }

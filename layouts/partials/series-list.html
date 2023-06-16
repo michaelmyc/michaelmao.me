@@ -1,6 +1,11 @@
 {{ partial "functions/load-scss.html" "scss/pages/list.scss" }}
 <div class="list-container">
-  {{ range sort .Pages "Title" }}
-    {{- partial "series-entry.html" . -}}
+  {{ $paginator := .Paginate .Pages .Site.Params.PaginateTexts }}
+  {{ range $paginator.Pages }}
+    {{ $listedPages := where .Pages "Params.unlisted" "!=" true }}
+    {{ if or (gt (len $listedPages) 0) (eq (len .Pages) 0) }}
+      {{- partial "series-entry.html" . -}}
+    {{ end }}
   {{ end }}
+  {{ template "_internal/pagination.html" . }}
 </div>

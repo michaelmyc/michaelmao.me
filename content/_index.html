@@ -3,5 +3,28 @@ title: "Home"
 ---
 
 {{< load-scss "scss/pages/home.scss" >}}
+{{< load-scss "scss/pages/list.scss" >}}
+
+<section class="bio-panel">
+  <div class="bio-image">
+    <img src="/profile.webp" alt="">
+  </div>
+  <div class="bio-text">
+    <h1 class="bio-welcome">Hi! this is Michael</h1>
+    <h2 class="dark">I build AI technologies that empower doctors to work more efficiently.</h2>
+    <p class="cv-links unselectable">
+      <a href="/about">About</a> / <a href="/mission">Mission</a> / <a href="/Michael_Mao_CV.pdf" target="_blank" rel="noopener">CV</a>
+    </p>
+  </div>
+</section>
+
+<section class="highlights">
+  <h2 class="section-title">Highlights</h2>
+  <div class="list-container">
+    {{< card url="/publication/deepsqueeze" include-image=false >}}
+    {{< card url="/project/okai" include-image=false >}}
+    {{< card url="/project/hustl" include-image=false >}}
+  </div>
+</section>
 
 {{< contact >}}

@@ -3,7 +3,7 @@ title: "Example Blogpost"
 subtitle: "Example Subtitle"
 date: 2022-10-07T00:36:54-07:00
 draft: false
-unlisted: false
+unlisted: true
 series: "Example Series"
 tags: ["example", "test"]
 description: "Showcase of the capabilities of this blogging platform"
@@ -24,9 +24,23 @@ Morbi tempus iaculis urna id volutpat. Phasellus vestibulum lorem sed risus ultr
 
 ## Example Image
 
-![example image](https://picsum.photos/id/900/800/600 "example image title")
+```md
+![example image alt](https://picsum.photos/id/900/800/600 "example image title")
+```
+
+![example image alt](https://picsum.photos/id/900/800/600 "example image title")
+
+This also supports silent autoplay mp4, webm, and ogg videos for small-sized animated images:
+
+```md
+![](globe.mp4 "example video title")
+```
+
+![](globe.mp4 "example video title")
 
 ## Example YouTube Embed
+
+YouTube videos can be embedded with "{{\< youtube video_id \>}}":
 
 {{< youtube LXb3EKWsInQ >}}
 
@@ -39,14 +53,35 @@ Latex can exist in two formats:
 - block equation
 - inline equation
 
-A block equation is its own "paragraph": 
+A block equation:
+
+```md
+\\[e = m c^2\\]
+```
+
 \\[e = m c^2\\]
 
-An inline equation means that the equation does not have its own block, but is merged in the paragraph. For example, \\(e^{\pi i} + 1 = 0\\) is in this paragraph. 
+or
+
+```md
+$$e = m c^2$$
+```
+
+$$e = m c^2$$
+
+An inline equation `\\( e^{\pi i} + 1 = 0 \\)`: \\( e^{\pi i} + 1 = 0 \\). 
+
+Since "$" is a commonly used character, the page does not recognize `$e^{\pi i} + 1 = 0$` as LaTeX unless specified in the front matter.
 
 ## Example Code
 
 You can use `inline` code or code blocks (with line highlighting and syntax highlighting):
+````md
+```py {hl_lines=[2], linenos=inline}
+def hello_world():
+    print("hello world")
+```
+````
 
 ```py {hl_lines=[2], linenos=inline}
 def hello_world():
@@ -55,17 +90,19 @@ def hello_world():
 
 ## Example Table
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+Tables work with alignment:
 
-Tables work with alignment as well:
+```md
+| Header 1    |   Header 2   |     Header 3  |
+| :---        |    :----:    |          ---: |
+| (1, 1)      |    (1, 2)    |        (1, 3) |
+| (2, 1)      |    (2, 2)    |        (2, 3) |
+```
 
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
+| Header 1    |   Header 2   |     Header 3  |
+| :---        |    :----:    |          ---: |
+| (1, 1)      |    (1, 2)    |        (1, 3) |
+| (2, 1)      |    (2, 2)    |        (2, 3) |
 
 ## Example Section Hierarchy (h2)
 ### h3
@@ -77,42 +114,84 @@ Tables work with alignment as well:
 
 ### Footnotes
 
-This is a footnote[^1].
+```md
+Some text[^1].
+
+[^1]: This is a footnote
+```
+
+Some text[^1].
 
 [^1]: This is a footnote
 
 ### Horizontal Line
 
+```md
+---
+```
+
 ---
 
 ### Block Quote
+
+```md
+> Some quote
+> > Indented quote
+```
 
 > Some quote
 > > Indented quote
 
 ### Text Formatting
 
+```md
+*Italicized*, **bolded**, or ***both***. You can also ~~strikethrough~~ text. 
+```
+
 *Italicized*, **bolded**, or ***both***. You can also ~~strikethrough~~ text. 
 
 ### Task List
 
-- [ ] Some item
+```md
+- [ ] Unfinished item
+- [x] Item done
+```
+
+- [ ] Unfinished item
 - [x] Item done
 
 ### Links
 
+```md
 <https://example.com>
+```
+
+<https://example.com>
+
+```md
+<contact@example.com>
+```
 
 <contact@example.com>
 
+```md
 [example named link](https://example.com)
+```
+
+[example named link](https://example.com)
+
+```md
+[example link to sections](#example-latex)
+```
 
 [example link to sections](#example-latex)
 
 ### Emoji
 
-I can also write with emojis! :smile:
+Emojis can be rendered with `:emoji_name:`. :smile:
 
 ### GitHub Gist
+
+GitHub Gists can be embedded with "{{\< gist username gist_id \>}}":
 
 {{< gist michaelmyc a4e02a04cbb3e526d029bb0f21e1f959 >}}

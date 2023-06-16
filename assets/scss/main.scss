@@ -22,7 +22,6 @@
   }
 }
 
-
 body {
   background-color: $background;
   color: $main;
@@ -31,7 +30,7 @@ body {
   text-size-adjust: none;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 6em;
+  grid-template-rows: 1fr 10em;
   overflow-x: hidden;
 }
 
@@ -65,7 +64,6 @@ picture img{
   flex-direction: column;
   align-items: center;
 }
-
 
 h1 {
   font-size: 2em;

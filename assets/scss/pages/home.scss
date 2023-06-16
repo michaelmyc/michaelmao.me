@@ -1,5 +1,69 @@
 @import "../variables.scss";
 
-.mock {
-  height: 100%;
+@media (orientation: landscape) {
+  .bio-panel {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    // gap: 2em;
+    align-items: center;
+  }
+}
+
+@media (orientation: portrait) {
+  // ipad screen
+  @media (min-aspect-ratio: 3/5) {
+    .bio-panel {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 0;
+      align-items: center;
+
+      .bio-image > img {
+        width: 100% !important;
+        border-radius: 50%;
+        user-select: none;
+      }
+    }
+  }
+
+  .bio-image > img {
+    margin-bottom: 4em;
+  }
+}
+
+.bio-panel {
+  padding: 3em 0;
+
+  .bio-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2;
+    grid-row: 1;
+
+    img {
+      width: 60%;
+      border-radius: 50%;
+      user-select: none;
+    }
+  }
+  
+  .bio-text {
+    padding-right: 3em;
+    grid-column: 1;
+    grid-row: 1;
+
+    .bio-welcome {
+      margin-bottom: 1em;
+    }
+
+    .cv-links {
+      margin-top: 0.8em;
+    }
+  }
+}
+
+.section-title {
+  margin: 0.8em 0;
+  color: $dark;
 }

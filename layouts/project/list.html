@@ -1,4 +1,4 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
-  {{- partial "card-list.html" . -}}
+  {{- partial "card-list.html" (dict "Context" . "GroupByDate" false) -}}
 {{ end }}

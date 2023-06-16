@@ -1,6 +1,22 @@
 {{ partial "functions/load-scss.html" "scss/pages/list.scss" }}
 <div class="list-container">
-  {{ range sort .Pages "Date" "desc" }}
-    {{- partial "card-entry.html" . -}}
+  {{ if .GroupByDate }}
+    {{ $groupedCards := .Context.Pages.GroupByDate "2006" }}
+    {{ $paginator := .Context.Paginate $groupedCards .Context.Site.Params.PaginateCards }}
+    {{ range $paginator.PageGroups }}
+      <h2 class="date-group">{{ .Key }}</h2>
+      <div class="list-container">
+        {{ range sort .Pages "Date" "desc" }}
+          {{- partial "card-entry.html" . -}}
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ else }}
+    {{ $paginator := .Context.Paginate ( sort .Context.Pages ".Params.Weight" ) .Context.Site.Params.PaginateCards }}
+    {{ range $paginator.Pages }}
+      {{- partial "card-entry.html" . -}}
+    {{ end }}
   {{ end }}
+
+  {{ template "_internal/pagination.html" .Context }}
 </div>

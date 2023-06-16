@@ -1,15 +1,7 @@
 {{ partial "functions/load-scss.html" "scss/pages/contact.scss" }}
 <div class="contact">
-  <h2 class="unselectable">CONTACT ME</h2>
+  <h2 class="section-title unselectable">Contact</h2>
   <div class="email">
-    yicong_mao<span class="at-sign">[AT]</span>alumni.brown.edu
-  </div>
-  <h3 class="unselectable">OR</h3>
-  <div class="contact-icons-container">
-    {{ range site.Params.Contact }}
-      <div class="contact-icon">
-        <a href='{{ index . "url" }}' target="_blank" rel="noopener">{{ index . "icon" | safeHTML }}</a>
-      </div>
-    {{ end }}
+    {{ .Site.Params.EmailUsername }}<span class="at-sign">[AT]</span>{{ .Site.Params.EmailDomain }}
   </div>
 </div>

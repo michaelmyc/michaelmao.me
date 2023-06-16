@@ -4,7 +4,10 @@
   <div class="tags-container">
     {{ $tags := slice }}
     {{ range .Pages }}
-      {{ $tags = $tags | append ( dict "Page" . "Count" ( len .Pages ) ) }}
+      {{ $listedPages := where .Pages "Params.unlisted" "!=" true }}
+      {{ if or (gt (len $listedPages) 0) (eq (len .Pages) 0) }}
+        {{ $tags = $tags | append ( dict "Page" . "Count" ( len $listedPages ) ) }}
+      {{ end }}
     {{ end }}
     {{ range sort $tags "Count" "desc" }}
       <b><a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }} ({{ .Count }})</a></b>

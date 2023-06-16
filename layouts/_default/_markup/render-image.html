@@ -1,5 +1,5 @@
 <div class="image-container">
-  {{ partial "functions/dynamic-img.html" ( dict "Context" . "ImagePath" .Destination ) }}
+  {{ partial "functions/dynamic-img.html" ( dict "Context" . "ImagePath" .Destination "Alt" .Text ) }}
   {{ if .Title }}
     <p class="dark">{{ .Title }}</p>
   {{ end }}
