@@ -31,7 +31,7 @@ p {
   margin-bottom: 1.1em;
 }
 
-article p:last-of-type {
+article p:last-child {
   margin-bottom: 0;
 }
 
@@ -118,6 +118,10 @@ ol {
 }
 
 .footnotes {
+  ol, li:last-child {
+    margin-bottom: 0;
+  }
+
   li {
     margin-bottom: 1.2em;
   }
