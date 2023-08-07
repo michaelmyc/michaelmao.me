@@ -6,8 +6,7 @@ enableEmoji = true
 [params]
   author = 'Michael Mao'
   fontawesome = '13bff49e18'
-  # TODO: Fix this!
-  siteDescription = 'I am Michael Mao, I build technologies that empower users to work more efficiently.'
+  siteDescription = 'I am Michael Mao, I develop AI algorithms for medical purposes.'
   coverImage = '/assets/cover.webp'
 
   # Pagination settings
