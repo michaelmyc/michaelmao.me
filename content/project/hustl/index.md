@@ -48,12 +48,34 @@ For more details, please refer to the [project writeup](hustl-writeup.pdf).
 
 <script src="https://player.vimeo.com/api/player.js"></script>
 <style>
+@media (orientation: landscape) {
+  .vimeo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+}
+@media (orientation: portrait) {
+  // ipad screen
+  @media (min-aspect-ratio: 3/5) {
+    .vimeo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1em;
+    }
+  }
+  .vimeo-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+  }
+}
 .vimeo-container {
   display: grid;
   text-align: center;
 }
 </style>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em;">
+<div class="vimeo-grid">
   <div class="vimeo-container">
     <div style="padding:56.25% 0 0 0;position:relative;justify-self:none;"><iframe src="https://player.vimeo.com/video/335471326?h=a82fe09ee9&color=ffffff&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
     <p class="dark">Baseline</p>
@@ -67,7 +89,7 @@ For more details, please refer to the [project writeup](hustl-writeup.pdf).
 
 ### Soldiers Memorial Gate
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em;">
+<div class="vimeo-grid">
   <div class="vimeo-container">
     <div style="padding:56.25% 0 0 0;position:relative;justify-self:none;"><iframe src="https://player.vimeo.com/video/335471673?h=a82fe09ee9&color=ffffff&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
     <p class="dark">Baseline</p>

@@ -1,0 +1,14 @@
+{{ partial "functions/load-scss.html" "scss/pages/list.scss" }}
+{{ $listedBlogs := where .Pages "Params.unlisted" "!=" true }}
+{{ if gt ( len $listedBlogs ) 0 }}
+  {{ $groupedBlogs := $listedBlogs.GroupByDate "January, 2006" }}
+  {{ $paginator := .Paginate $groupedBlogs .Site.Params.PaginateTexts }}
+  {{ range $paginator.PageGroups }}
+    <div class="list-container">
+      {{ range sort (.Pages.ByParam "Date") "Params.SeriesNumber" "asc" }}
+        {{- partial "series-text-entry.html" . -}}
+      {{ end }}
+    </div>
+  {{ end }}
+  {{ template "_internal/pagination.html" . }}
+{{ end }}

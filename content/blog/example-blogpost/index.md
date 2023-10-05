@@ -5,6 +5,7 @@ date: 2022-10-07T00:36:54-07:00
 draft: false
 unlisted: true
 series: "Example Series"
+seriesNumber: 0
 tags: ["example", "test"]
 description: "Showcase of the capabilities of this blogging platform"
 coverImage: "https://picsum.photos/id/900/800/600"

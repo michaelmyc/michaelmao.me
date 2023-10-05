@@ -11,10 +11,8 @@
 }
 
 // retina display font scaling
-@media 
-(orientation: landscape) {
-  @media 
-  (-webkit-min-device-pixel-ratio: 2), 
+@media (orientation: landscape) {
+  @media (-webkit-min-device-pixel-ratio: 2), 
   (min-resolution: 192dpi) { 
       body {
         font-size: 1.1em !important;
@@ -55,6 +53,10 @@ picture img{
   color: $dark;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .unselectable {
   user-select: none;
 }
@@ -66,7 +68,7 @@ picture img{
 }
 
 .dynamic-image {
-  background-color: $card;
+  background-color: transparent;
 }
 
 h1 {
