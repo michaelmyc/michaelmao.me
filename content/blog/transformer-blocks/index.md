@@ -7,7 +7,7 @@ unlisted: false
 seriesNumber: 3
 series: "Neural Network Intuitions"
 tags: ["deep-learning"]
-description: ""
+description: "All I got is attention"
 coverImage: "" # a 5:1 image with important content in the center 3:1 zone for best effect
 autonumbering: true
 katex:

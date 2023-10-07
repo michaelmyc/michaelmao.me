@@ -7,7 +7,7 @@ unlisted: false
 seriesNumber: 2
 series: "Neural Network Intuitions"
 tags: ["deep-learning", "cnn"]
-description: "Visual intuitions for convolution layers"
+description: "Fancy sliding boxes"
 coverImage: "convolution.mp4" # a 5:1 image with important content in the center 3:1 zone for best effect
 autonumbering: true
 katex:
