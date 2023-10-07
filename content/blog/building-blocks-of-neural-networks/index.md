@@ -1,11 +1,11 @@
 ---
-title: "Building Blocks of Neural Networks"
+title: "Neural Network Intuitions"
 subtitle: ""
 date: 2023-10-01T23:30:46+08:00
 draft: false
 unlisted: false
-series: "Building Blocks of Neural Networks"
 seriesNumber: 0
+series: "Neural Network Intuitions"
 tags: ["deep-learning"]
 description: "Purpose, Disclaimer, and Table of Content"
 coverImage: "" # a 5:1 image with important content in the center 3:1 zone for best effect
@@ -29,9 +29,27 @@ This series follows the conventions in [PyTorch 2.1.0](https://pytorch.org/docs/
 
 ## Table of Content
 
-1. [Linear Layers](/blog/linear-layers)
-1. [Convolutional Layers](/blog/convolutional-layers)
-1. [Transformer Blocks](/blog/transformer-blocks)
+1. [Multi-Layer Perceptrons](/blog/linear-layers)
+    - Linear Layers
+    - Activation Functions
+    - Dropout
+2. [Convolution Layers](/blog/convolution-layers)
+    - Convolution Layers
+    - Padding
+    - Pooling
+3. [Transformer Blocks](/blog/transformer-blocks)
+    - Embedding
+    - Positional Encoding
+    - Scaled Dot-Product Attention
+    - Transformer Encoder
+    - Transformer Decoder
+4. [Recurrent Layers](/blog/recurrent-layers)
+    - RNN
+    - GRU
+    - LSTM
+5. [Normalization Layers](/blog/normalization-layers)
+    - Batch Norm
+    - Layer Norm
 
 ---
 

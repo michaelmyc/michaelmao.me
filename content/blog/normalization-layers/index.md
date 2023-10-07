@@ -1,12 +1,12 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "Normalization Layers"
 subtitle: ""
-date: {{ .Date }}
+date: 2023-10-08T02:36:40+08:00
 draft: true
 unlisted: false
-seriesNumber: 0
-series: ""
-tags: []
+seriesNumber: 5
+series: "Neural Network Intuitions"
+tags: ["deep-learning"]
 description: ""
 coverImage: "" # a 5:1 image with important content in the center 1/3 zone for best effect
 autonumbering: true

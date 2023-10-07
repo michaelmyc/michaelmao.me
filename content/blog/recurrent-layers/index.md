@@ -1,12 +1,12 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "Recurrent Layers"
 subtitle: ""
-date: {{ .Date }}
+date: 2023-10-08T02:31:39+08:00
 draft: true
 unlisted: false
-seriesNumber: 0
-series: ""
-tags: []
+seriesNumber: 4
+series: "Neural Network Intuitions"
+tags: ["deep-learning"]
 description: ""
 coverImage: "" # a 5:1 image with important content in the center 1/3 zone for best effect
 autonumbering: true
