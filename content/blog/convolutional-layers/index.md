@@ -17,4 +17,4 @@ katex:
 
 This series is a brief overview for 
 
-![](convolution.mp4)
+<!-- ![](convolution.mp4) -->
