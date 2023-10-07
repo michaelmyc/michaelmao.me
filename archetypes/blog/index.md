@@ -8,7 +8,7 @@ series: ""
 seriesNumber: 0
 tags: []
 description: ""
-coverImage: "" # a 5:1 image with important content in the center 3:1 zone for best effect
+coverImage: "" # a 5:1 image with important content in the center 1/3 zone for best effect
 autonumbering: true
 katex:
   enable: false

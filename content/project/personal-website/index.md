@@ -5,7 +5,8 @@ date: 2022-10-07T00:36:54-07:00
 draft: false
 weight: 2
 description: "Personal website built with Hugo"
-coverImage: "website.png"
+coverImage: "website.png" # a 5:1 image with important content in the center 1/3 zone for best effect
+cardImage: "website.png" # a thin image/video featured on cards
 autonumbering: false
 katex:
   enable: false

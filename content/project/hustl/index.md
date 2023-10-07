@@ -5,7 +5,8 @@ date: 2023-06-14T13:09:28-07:00
 draft: false
 weight: 1
 description: "Open source computer vision tool for creating hyperlapse videos"
-coverImage: "hustl-small.mp4" # a 5:1 image with important content in the center 3:1 zone for best effect
+coverImage: "" # a 5:1 image with important content in the center 1/3 zone for best effect
+cardImage: "hustl.mp4" # a thin image/video featured on cards
 autonumbering: false
 katex:
   enable: false

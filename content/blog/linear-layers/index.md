@@ -1,7 +1,7 @@
 ---
-title: "Common Neural Network Layers"
+title: "Linear Layers"
 subtitle: ""
-date: 2023-10-01T16:48:42+08:00
+date: 2023-10-01T23:48:42+08:00
 draft: true
 unlisted: false
 series: "Building Blocks of Neural Networks"
@@ -14,3 +14,7 @@ katex:
   enable: false
   singleDollarDeliminator: true
 ---
+
+## Linear
+
+### Activation

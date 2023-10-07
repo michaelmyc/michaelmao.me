@@ -6,7 +6,8 @@ date: 2020-01-01
 draft: false
 weight: 0
 description: "SIGMOD 2020"
-coverImage: "deepsqueeze.png" # a 5:1 image with important content in the center 3:1 zone for best effect
+coverImage: "deepsqueeze.png" # a 5:1 image with important content in the center 1/3 zone for best effect
+cardImage: "deepsqueeze.png" # a thin image/video featured on cards
 publication: "Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data"
 link: "https://dl.acm.org/doi/10.1145/3318464.3389734"
 autonumbering: false

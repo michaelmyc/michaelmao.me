@@ -1,6 +1,8 @@
 {{ define "main" }}
   {{ partial "functions/load-scss.html" "scss/pages/collections.scss" }}
-  <h1><a class="breadcrumb-link" href="/series">Series</a><span class="breadcrumb-slash">/</span>{{ .Title }}</h1>
-  <span class="dark">{{ .Params.Description }}</span>
+  <div class="series-title">
+    <h1><a class="breadcrumb-link" href="/series">Series</a><span class="breadcrumb-slash">/</span>{{ .Title }}</h1>
+    <h3 class="dark">{{ .Params.Description }}</h3>
+  </div>
   {{- partial "series-text-list.html" . -}}
 {{ end }}
