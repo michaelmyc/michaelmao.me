@@ -1,3 +1,3 @@
 {{ $options := dict "use" "autoprefixer postcss-nested" }}
-{{ $style := resources.Get . | resources.ToCSS | resources.PostCSS $options | minify }}
+{{ $style := resources.Get . | css.Sass | css.PostCSS $options | minify }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
