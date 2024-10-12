@@ -28,14 +28,14 @@ enableEmoji = true
     name = 'Blog'
     url = '/blog'
   [[params.menu]]
-    name = 'Project'
+    name = 'Projects & Publications'
     url = '/project'
-  [[params.menu]]
-    name = 'Publication'
-    url = '/publication'
   [[params.menu]]
     name = 'Photography'
     url = '/photography'
+  [[params.menu]]
+    name = 'About'
+    url = '/about'
 
   # Social Media Information
   

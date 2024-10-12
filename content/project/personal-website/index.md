@@ -53,7 +53,7 @@ Other things you may want to customize are the footer in `layouts/partials/foote
 
 Most of the site is configurable through the `config.toml` file. The settings should be fairly self-explanatory. You should also add your own CNAME, cover image, and favicon in `static`. 
 
-To add a page of a specific type (blog/project/publication/photography), `hugo new [type]/[name]` will create the page in the `content` folder from the relevant template in the `archetypes` folder. 
+To add a page of a specific type (blog/project/photography), `hugo new [type]/[name]` will create the page in the `content` folder from the relevant template in the `archetypes` folder. 
 
 ### Auto Deploy to GitHub Pages
 
